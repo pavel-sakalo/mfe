@@ -1,14 +1,13 @@
-#ifdef MFE_TYPES_STDTYPES_H_
+#ifndef MFE_TYPES_STDTYPES_H_
 #define MFE_TYPES_STDTYPES_H_
 
-namespace MFE
+namespace mfe
 {
 
 	typedef signed char Char;
 	typedef unsigned char UChar;
-	typedef signed wchar_t WChar;
-	typedef unsigned wchar_t UWchar;
-	typedef signed short Short;
+	typedef wchar_t WChar;
+	typedef signed short Short; 
 	typedef unsigned short UShort;
 	typedef signed int Int;
 	typedef unsigned int UInt;
@@ -19,6 +18,6 @@ namespace MFE
 	typedef float Float;
 	typedef double Double;
 
-} // namespace MFE
+} // namespace mfe
 
 #endif // MFE_TYPES_STDTYPES_H_
