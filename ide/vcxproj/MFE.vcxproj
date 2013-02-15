@@ -64,10 +64,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\source\main.cpp" />
+    <ClInclude Include="..\..\source\core\core.h" />
+    <ClInclude Include="..\..\source\events\event.h" />
+    <ClInclude Include="..\..\source\Types\std_types.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\source\Types\std_types.h" />
+    <ClCompile Include="..\..\source\core\core.cpp" />
+    <ClCompile Include="..\..\source\events\event.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

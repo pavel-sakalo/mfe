@@ -1,16 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\..\source\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="types">
       <UniqueIdentifier>{af859870-3f0f-4651-a30e-9e09df4c8545}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{385aa73c-419c-4e8b-8410-1ca476ded5be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="events">
+      <UniqueIdentifier>{58114874-f6cd-473f-b073-684c2a816816}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\source\Types\std_types.h">
       <Filter>types</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\source\core\core.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\events\event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\core\core.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\events\event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
