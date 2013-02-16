@@ -21,7 +21,8 @@ public:
 	void push_back(T var)	{
 		size++;
 		if( size > mem/sizeof(T)) {
-			arr = (T*)realloc(arr,mem*2);
+			mem *= 2;
+			arr = (T*)realloc(arr,mem);
 			if( !arr ) 
 				perror("Failed to reallocate memory to Array");
 		}
