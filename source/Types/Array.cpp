@@ -8,54 +8,75 @@ template <class T>
 class Array {
 public:
 	Array(const int len = 10);
-	~Array() { 	free(arr); 	mem = 0, size = 0;	}
+	~Array(); 
 	void PushBack(const T var);
-	int GetSize() { return size; }
-	Array& operator = (const Array &x); 
-	T& operator [] (const int i) { return arr[i]; }
+	int GetSize();
+	Array& operator = (Array& x); 
+	T& operator [] (const int i);
 private:
 	T *arr;
 	int size;
 	int mem;
 };
 
-template<class T> Array<T>::Array(const int len = 10) {
-		arr = (T*)malloc(size*sizeof(T));
-		mem = len*sizeof(T);
+template<class T> Array<T>::Array(const int len = 100) {
+		arr = new T [len];
+		mem = len;
 		size = 0;
 }
+template<class T> Array<T>::~Array() { 	delete [] arr; 	mem = 0, size = 0;	}
+template<class T> int Array<T>::GetSize()  { return size; }
 template<class T> void Array<T>::PushBack(const T var) {
 		size++;
-		if( size > mem/sizeof(T)) {
+		if( size > mem) {
+			//перевыделение памяти
 			mem *= 2;
-			arr = (T*)realloc(arr,mem);
-			if( !arr ) 
-				perror("Failed to reallocate memory to Array");
+			T *tmp = new T [mem];
+			memcpy(tmp,arr,(size-1)*sizeof(T));
+			delete [] arr;
+			arr = new T [mem];
+			memcpy(arr,tmp,(size-1)*sizeof(T));
+			delete [] tmp;
+			arr[size-1] = var;
 		}
-		arr[size-1] = var;
+		else
+			arr[size-1] = var;
 }
-template<class T> Array<T>& Array<T>::operator = (const Array &x) {
-			size = 0;
-			for(int i = 0; i < x.GetSize(); i++) 
-				this.PushBack(x[i]);
-			return this;
+template<class T> Array<T>& Array<T>::operator = (Array<T>& x) {
+	if( this == &x)
+		return *this;
+	if( size < x.GetSize()) {
+		do {
+			delete [] arr;	
+			mem *= 2;
+			arr = new T [mem];
+		} while( mem < x.GetSize() );
+	}
+	memcpy(arr,x.arr,x.GetSize()*sizeof(T));
+	size = x.GetSize();
+	return *this;
 }
+template<class T> T& Array<T>::operator [] (const int i) {
+	if( i >= size) {
+		perror("Out of range");
+	}
+	else 
+		return arr[i];
+}
+
+
 
 int main()
 {
 	Array<int> arr;
-	for(int i = 0; i < 200; i++) {
+	for(int i = 0; i < 20; i++) {
 		arr.PushBack(i);
 	}
-	for(int i = 0; i < 200; i++) {
-		printf("%d ",arr[i]);
-	}
-	printf("\n");
-	Array<int> arr2 = arr;
-	for(int i = 0; i < 200; i++) {
-		printf("%d ",arr2[i]);
+	Array<int> tmp;
+	tmp = arr;
+	for(int i = 0; i < 20; i++) {
+		printf("%d ",tmp[i]);
 	}
 	system("pause");
 	return 0;
 }
-
