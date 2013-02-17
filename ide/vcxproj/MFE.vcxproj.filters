@@ -21,6 +21,9 @@
     <ClInclude Include="..\..\source\events\event.h">
       <Filter>events</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\source\types\array.h">
+      <Filter>types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\core\core.cpp">
@@ -29,5 +32,9 @@
     <ClCompile Include="..\..\source\events\event.cpp">
       <Filter>events</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\types\array.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\main.cpp" />
   </ItemGroup>
 </Project>

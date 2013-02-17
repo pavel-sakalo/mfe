@@ -4,19 +4,20 @@
 namespace mfe
 {
 
-	typedef signed char Char;
-	typedef unsigned char UChar;
-	typedef wchar_t WChar;
-	typedef signed short Short; 
-	typedef unsigned short UShort;
-	typedef signed int Int;
-	typedef unsigned int UInt;
-	typedef signed long Long;
-	typedef unsigned long ULong;
-	typedef signed long long Int64;
-	typedef unsigned long long UInt64;
-	typedef float Float;
-	typedef double Double;
+	typedef signed char CHAR;
+	typedef unsigned char UCHAR;
+	typedef wchar_t WCHAR;
+	typedef signed short SHORT; 
+	typedef unsigned short USHORT;
+	typedef signed int INT;
+	typedef unsigned int UINT;
+	typedef signed long LONG;
+	typedef unsigned long ULONG;
+	typedef signed long long INT64;
+	typedef unsigned long long UINT64;
+	typedef float FLOAT;
+	typedef double DOUBLE;
+	typedef void VOID;
 
 } // namespace mfe
 
