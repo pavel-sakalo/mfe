@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/night/programming/mfe/source/core/../events/event.h
+ievent.h
+/home/night/programming/mfe/source/core/../events/ievent.h
+vector
+-
+
+/home/night/programming/mfe/source/core/../events/ievent.h
+
+/home/night/programming/mfe/source/core/enginecore.cpp
+enginecore.h
+/home/night/programming/mfe/source/core/enginecore.h
+
+/home/night/programming/mfe/source/core/enginecore.h
+../events/event.h
+/home/night/programming/mfe/source/core/../events/event.h
+ienginecore.h
+/home/night/programming/mfe/source/core/ienginecore.h
+
+/home/night/programming/mfe/source/core/ienginecore.h
+../events/ievent.h
+/home/night/programming/mfe/source/core/../events/ievent.h
+

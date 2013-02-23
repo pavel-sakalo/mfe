@@ -1,0 +1,1 @@
+/home/night/programming/mfe/build/linux/debug/CMakeFiles/mfe.dir
