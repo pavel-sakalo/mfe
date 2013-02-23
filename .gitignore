@@ -1,7 +1,1 @@
-bin/
-ide/vcxproj/Debug/
-ide/vcxproj/Release/
-ide/vs2012/
-!ide/vs2012/MFE.sln
-ide/vs2010/
-!ide/vs2010/MFE.sln
+build/
